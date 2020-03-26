@@ -74,5 +74,22 @@ describe("fail function tests", function() {
 
 })
 
-//fail
 
+describe("get function tests", function() {
+
+    it("item enhancement at 0", function() {
+        object.enhancement = 0;
+
+        const newObject = enhancer.get(object);
+
+        expect(newObject.name).toBe("test");
+    })
+
+    it("item enhancement > 0", function() {
+        object.enhancement = 15;
+        
+        const newObject = enhancer.get(object);
+
+        expect(newObject.name).toBe("[+15] test")
+    })
+})
